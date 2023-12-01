@@ -5,12 +5,12 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
-#include "../bug.h"
-#include "../init.h"
+#include "bug.h"
+#include "init.h"
 #include "led.h"
-#include "../itypes.h"
-#include "../message-queue.h"
-#include "../edsm.h"
+#include "itypes.h"
+#include "message-queue.h"
+#include "edsm.h"
 
 void led_init_enter(struct edsm *me);
 

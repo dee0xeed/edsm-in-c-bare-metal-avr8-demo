@@ -8,7 +8,7 @@ SOURCES       += message-queue.c
 SOURCES       += edsm.c
 SOURCES       += main.c
 
-SOURCES       += sm/led.c
+SOURCES       += led.c
 SOURCES       += usart.c
 #SOURCES       += eeprom.c
 SOURCES       += shell.c
@@ -21,9 +21,6 @@ OPTIMIZE       = -Os
 DEFS           = -DF_CPU=16000000UL
 LIBS           =
 
-### ---
-### ---
-
 CC = avr-gcc
 override CFLAGS        = -g -Wall $(OPTIMIZE) -mmcu=$(TARGET) $(DEFS)
 override LDFLAGS       = -Wl,-Map,$(PRG).map
@@ -31,11 +28,11 @@ override LDFLAGS       = -Wl,-Map,$(PRG).map
 OBJCOPY        = avr-objcopy
 OBJDUMP        = avr-objdump
 
-all: $(PROGRAM).elf lst text eeprom
-#all: $(PROGRAM).elf lst text
+#all: $(PROGRAM).elf lst text eeprom
+all: $(PROGRAM).elf lst text
 
 $(PROGRAM).elf: $(OBJECTS)
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(OBJECTS) $(LIBS)
+	LANG=C $(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(OBJECTS) $(LIBS)
 
 clean:
 	rm -rf *.o $(PROGRAM).elf *.eps *.png *.pdf *.bak
