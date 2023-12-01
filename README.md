@@ -1,7 +1,5 @@
 ## Event driven state machines for avr8 (arduino nano, atmega328p)
 
-test
-
 ### Architechture of the program
 ![prog-arch](https://github.com/dee0xeed/edsm-in-c-bare-metal-avr8-demo/blob/main/images/avr8-edsm.svg)
 
