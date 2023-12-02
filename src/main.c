@@ -14,9 +14,11 @@ int main(void)
 //	init_hardware();
 //	usart_prep_rx();
 	sei();
+    sleep_enable();
 
 	for (;;) {
 		process_messages();
-		sleep_mode();
+		//sleep_mode();
+		sleep_cpu();
 	}
 }
